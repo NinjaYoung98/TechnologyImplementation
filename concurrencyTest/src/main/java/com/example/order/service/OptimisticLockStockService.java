@@ -19,5 +19,4 @@ public class OptimisticLockStockService {
         stock.decrease(quantity);
         stockRepository.saveAndFlush(stock);
     }
-
 }
