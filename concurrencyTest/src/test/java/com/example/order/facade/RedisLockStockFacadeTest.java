@@ -56,5 +56,4 @@ class RedisLockStockFacadeTest {
         // 100 - (1*100) = 0
         assertEquals(0, stock.getQuantity());
     }
-
 }

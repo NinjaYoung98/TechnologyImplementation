@@ -18,7 +18,6 @@ public class RedissonLockStockFacade {
 
     public void decrease(Long key, Long quantity) {
         RLock lock = redissonClient.getLock(key.toString());//Lock 객체 가져옴
-
         try {
             boolean available = lock.tryLock(5, 1, TimeUnit.SECONDS);
             if (!available) {
@@ -31,8 +30,5 @@ public class RedissonLockStockFacade {
         } finally {
             lock.unlock();
         }
-
-
     }
-
 }
